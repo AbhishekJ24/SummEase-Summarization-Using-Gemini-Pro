@@ -5,7 +5,7 @@ import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 import whisper
 
-prompt = '''You are a Text Summarizer. You'll take the text and summarize the entire content, providing us with the important points in bullets. The first line should be the title and what is going to come in that text beneath it as a description, followed by the summary. The transcript text is appended here, please provide its summary: '''
+prompt = ''' You are a Text Summarizer. You'll take the text and summarize the entire content, providing us with the important points in bullets. The first line should be the title and what is going to come in that text beneath it as a description, followed by the summary. The transcript text is appended here, please provide its summary: '''
 
 def load_env_and_configure():
     load_dotenv()
