@@ -30,10 +30,11 @@ def extract_content_from_youtube(youtube_url):
         return None
 
 def transcribe_audio(file):
-    model = whisper.load_model("gemini-pro")
-    audio = whisper.load_audio(file)
-    result = model.transcribe(audio)
-    return result['text']
+    # model = whisper.load_model("gemini-pro")
+    # audio = whisper.load_audio(file)
+    # result = model.transcribe(audio)
+    # return result['text']
+    pass
 
 def main():
     load_env_and_configure()
@@ -69,17 +70,17 @@ def main():
                 else:
                     st.write("Summary could not be generated")
 
-    elif option == "Audio":
-        audio_file = st.file_uploader("Upload audio file", type=["mp3", "wav"])
-        if audio_file:
-            if st.button("Get Summary"):
-                transcript_text = transcribe_audio(audio_file)
-                if transcript_text:
-                    summary = generate_result(transcript_text)
-                    if summary:
-                        st.write(summary)
-                    else:
-                        st.write("Summary could not be generated")
+    # elif option == "Audio":
+    #     audio_file = st.file_uploader("Upload audio file", type=["mp3", "wav"])
+    #     if audio_file:
+    #         if st.button("Get Summary"):
+    #             transcript_text = transcribe_audio(audio_file)
+    #             if transcript_text:
+    #                 summary = generate_result(transcript_text)
+    #                 if summary:
+    #                     st.write(summary)
+    #                 else:
+    #                     st.write("Summary could not be generated")
 
 if __name__ == "__main__":
     main()
